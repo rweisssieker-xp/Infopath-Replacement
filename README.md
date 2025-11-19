@@ -42,6 +42,8 @@ FormXChange-Suite/
 - Advanced Collaboration (Real-time co-authoring)
 - Marketplace Ecosystem
 
+> **📋 Vollständige Liste aller USPs**: Siehe [USP Recommendations](docs/USP_RECOMMENDATIONS.md) für 24+ zusätzliche Unique Selling Points und Priorisierungsempfehlungen.
+
 ## Getting Started
 
 ### Voraussetzungen
@@ -65,4 +67,7 @@ npm run dev
 ## Lizenz
 
 Proprietär
+
+
+
 
