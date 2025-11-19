@@ -1,0 +1,32 @@
+{
+  "name": "formxchange-suite",
+  "version": "1.0.0",
+  "description": "FormXChange Suite - Modern form and workflow platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "nx run-many --target=serve --all --parallel",
+    "dev:web": "nx serve web",
+    "dev:api": "nx run-many --target=serve --projects=tag:backend --parallel",
+    "build": "nx run-many --target=build --all --parallel",
+    "test": "nx run-many --target=test --all --parallel",
+    "test:web": "nx test web",
+    "test:api": "nx run-many --target=test --projects=tag:backend --parallel",
+    "lint": "nx run-many --target=lint --all --parallel",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "@nx/workspace": "^17.0.0",
+    "nx": "^17.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
+

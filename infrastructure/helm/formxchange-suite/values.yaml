@@ -1,0 +1,66 @@
+# Default values for formxchange-suite
+# This is a YAML-formatted file.
+
+replicaCount: 1
+
+image:
+  repository: formxchange
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+environment: production
+
+postgresql:
+  enabled: true
+  host: postgres
+  port: 5432
+  database: formxchange
+  username: postgres
+  password: ""
+
+redis:
+  enabled: true
+  host: redis
+  port: 6379
+
+minio:
+  enabled: true
+  endpoint: minio:9000
+  accessKey: ""
+  secretKey: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: "nginx"
+  annotations: {}
+  hosts:
+    - host: formxchange.local
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
