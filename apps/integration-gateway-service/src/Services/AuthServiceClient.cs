@@ -1,5 +1,4 @@
 using IntegrationGatewayService.GraphQL.Types;
-using System.Net.Http.Headers;
 
 namespace IntegrationGatewayService.Services;
 
@@ -17,11 +16,11 @@ public class AuthServiceClient : IAuthServiceClient
         _logger = logger;
     }
 
-    public async Task<UserType?> GetCurrentUserAsync(string jwtToken, CancellationToken cancellationToken = default)
+    public async Task<UserType?> GetCurrentUserAsync(CancellationToken cancellationToken = default)
     {
         try
         {
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
+            // JWT token is automatically forwarded by JwtForwardingHandler
             var response = await _httpClient.GetAsync("/api/auth/me", cancellationToken);
             
             if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized || 
@@ -41,11 +40,11 @@ public class AuthServiceClient : IAuthServiceClient
         }
     }
 
-    public async Task<UserType?> GetUserByIdAsync(Guid userId, string jwtToken, CancellationToken cancellationToken = default)
+    public async Task<UserType?> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken = default)
     {
         try
         {
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwtToken);
+            // JWT token is automatically forwarded by JwtForwardingHandler
             var response = await _httpClient.GetAsync($"/api/auth/users/{userId}", cancellationToken);
             
             if (response.StatusCode == System.Net.HttpStatusCode.NotFound)

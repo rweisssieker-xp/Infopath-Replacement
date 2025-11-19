@@ -1,5 +1,4 @@
 using HotChocolate.AspNetCore;
-using HotChocolate.AspNetCore.Playground;
 using IntegrationGatewayService.GraphQL.Mutations;
 using IntegrationGatewayService.GraphQL.Queries;
 using IntegrationGatewayService.Services;
@@ -14,20 +13,28 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Configure HTTP clients for backend services
+// Add HTTP context accessor for extracting JWT tokens (must be added before HTTP clients)
+builder.Services.AddHttpContextAccessor();
+
+// Configure HTTP clients for backend services with JWT forwarding
 builder.Services.AddHttpClient<IFormServiceClient, FormServiceClient>(client =>
 {
     var baseUrl = builder.Configuration["FormBuilderService:BaseUrl"] ?? "http://localhost:5001";
     client.BaseAddress = new Uri(baseUrl);
     client.Timeout = TimeSpan.FromSeconds(30);
-});
+})
+.AddHttpMessageHandler<IntegrationGatewayService.Handlers.JwtForwardingHandler>();
 
 builder.Services.AddHttpClient<IAuthServiceClient, AuthServiceClient>(client =>
 {
     var baseUrl = builder.Configuration["AuthService:BaseUrl"] ?? "http://localhost:5000";
     client.BaseAddress = new Uri(baseUrl);
     client.Timeout = TimeSpan.FromSeconds(30);
-});
+})
+.AddHttpMessageHandler<IntegrationGatewayService.Handlers.JwtForwardingHandler>();
+
+// Register the JWT forwarding handler
+builder.Services.AddTransient<IntegrationGatewayService.Handlers.JwtForwardingHandler>();
 
 // Configure JWT Authentication
 var jwtSecret = builder.Configuration["JWT:Secret"] ?? throw new InvalidOperationException("JWT Secret not configured");
@@ -60,14 +67,10 @@ builder.Services
         .AddTypeExtension<UserQueries>()
     .AddMutationType(d => d.Name("Mutation"))
         .AddTypeExtension<FormMutations>()
-    .AddAuthorization()
     .AddType<IntegrationGatewayService.GraphQL.Types.FormType>()
     .AddType<IntegrationGatewayService.GraphQL.Types.UserType>()
     .AddType<IntegrationGatewayService.GraphQL.Types.FormStatus>()
     .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = builder.Environment.IsDevelopment());
-
-// Add HTTP context accessor for extracting JWT tokens
-builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 

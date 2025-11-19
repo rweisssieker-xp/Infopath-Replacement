@@ -17,21 +17,10 @@ public class UserQueries
     [Authorize]
     public async Task<UserType?> GetCurrentUserAsync(
         [Service] IAuthServiceClient authServiceClient,
-        [Service] IHttpContextAccessor httpContextAccessor,
         CancellationToken cancellationToken = default)
     {
-        var jwtToken = ExtractJwtToken(httpContextAccessor);
-        return await authServiceClient.GetCurrentUserAsync(jwtToken, cancellationToken);
-    }
-
-    private static string ExtractJwtToken(IHttpContextAccessor httpContextAccessor)
-    {
-        var authHeader = httpContextAccessor.HttpContext?.Request.Headers.Authorization.ToString();
-        if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
-        {
-            throw new UnauthorizedAccessException("JWT token is required");
-        }
-        return authHeader.Substring("Bearer ".Length).Trim();
+        // JWT token is automatically forwarded by JwtForwardingHandler
+        return await authServiceClient.GetCurrentUserAsync(cancellationToken);
     }
 }
 

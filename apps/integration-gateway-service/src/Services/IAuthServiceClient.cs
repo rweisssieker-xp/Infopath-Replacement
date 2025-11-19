@@ -7,7 +7,7 @@ namespace IntegrationGatewayService.Services;
 /// </summary>
 public interface IAuthServiceClient
 {
-    Task<UserType?> GetCurrentUserAsync(string jwtToken, CancellationToken cancellationToken = default);
-    Task<UserType?> GetUserByIdAsync(Guid userId, string jwtToken, CancellationToken cancellationToken = default);
+    Task<UserType?> GetCurrentUserAsync(CancellationToken cancellationToken = default);
+    Task<UserType?> GetUserByIdAsync(Guid userId, CancellationToken cancellationToken = default);
 }
 
