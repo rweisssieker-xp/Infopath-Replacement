@@ -28,50 +28,50 @@ The platform provides a modern, modular alternative with low-code form builder, 
 
 ### Functional
 
-1. FR1: Form Builder mit Drag-and-Drop Editor zur visuellen Erstellung von Formularen
-2. FR2: Komponentenbibliothek mit Textfeldern, Tabellen, dynamischen Repeatern, Sub-Forms, Matrixfeldern und Conditional Sections
-3. FR3: Logik ohne Code: Sichtbarkeitsregeln, Validierungsregeln, berechnete Felder und Feldabhängigkeiten
-4. FR4: Datenmodelle auf Basis JSON Schema / Custom Schema
-5. FR5: Preview-Funktion für Desktop- und Mobile-Ansicht während der Formularerstellung
-6. FR6: Versionierung & Branching für Formulare
-7. FR7: Template Library mit Unternehmensstandards
-8. FR8: Responsives Rendering der Formulare zur Laufzeit
-9. FR9: Offline-fähige Webversion (PWA) für mobile Nutzung
-10. FR10: Autosave-Funktionalität während der Formularausfüllung
-11. FR11: Dynamische Feldvalidierung (client- und serverseitig)
-12. FR12: Formularsperren und Kollisionskontrolle (Co-Authoring optional)
-13. FR13: Workflow-Automatisierung mit Zustimmungsprozessen (Genehmigungen, Ablehnungen, Delegation)
-14. FR14: Eskalationen und SLA-Management für Workflows
-15. FR15: Integration in Microsoft Teams, Outlook, Slack für Benachrichtigungen
-16. FR16: Ereignisbasierte Trigger (z.B. ERP-Events)
-17. FR17: Regelbasierte Weiterleitung basierend auf Rollen, Kostenstellen, Abteilungen
-18. FR18: Bidirektionale Integration mit Microsoft 365 (SharePoint & OneDrive)
-19. FR19: Bidirektionale Integration mit D365 F&O und D365 CE
-20. FR20: SAP-Integration via OData
-21. FR21: ServiceNow-Integration
-22. FR22: Salesforce-Integration
-23. FR23: Konnektoren für externe REST/SOAP APIs
-24. FR24: Webhook-Unterstützung für ereignisgesteuerte Integrationen
-25. FR25: Export nach JSON, XML, PDF (A-Archivierung)
-26. FR26: Versionshistorie für Formulare und Formulardaten
-27. FR27: Audittrail auf Feldebene für alle Änderungen
-28. FR28: Protokollierung von Signaturen und Freigaben
-29. FR29: DSGVO-konforme Löschkonzepte
-30. FR30: Optional: Feldverschlüsselung für sensitive Daten
-31. FR31: Rollen- und Rechtekonzept (RBAC + ABAC)
-32. FR32: Admin-Konsole für Formularverwaltung
-33. FR33: Workflow-Konfiguration über Admin-Konsole
-34. FR34: Datenmodellverwaltung über Admin-Konsole
-35. FR35: API/Connector-Übersicht und -Verwaltung
-36. FR36: Mandantenfähigkeit (Multi-Tenancy)
-37. FR37: Logging & Monitoring über Admin-Konsole
-38. FR38: AI Form Generator: Erzeugt komplette Formulare aus PDF, Word oder Scans (OCR → Struktur → JSON Schema)
-39. FR39: AI Workflow Builder: Analysiert Formularlogik und schlägt Geschäftsprozesse automatisch vor
-40. FR40: AI Validation Advisor: Schlägt Validierungsregeln und Datenbindungsmöglichkeiten vor
-41. FR41: AI Input Normalization: Automatisiert Datenqualität (Adresskorrektur, Dublettenprüfung, Standardisierung)
-42. FR42: AI Governance Engine: Erkennt veraltete Formulare, Risiken, fehlende Felder, Compliance-Lücken
-43. FR43: AI Conversational Mode: Nutzer füllen Formulare per Chat-Dialog aus; Backend übersetzt Eingaben in strukturierte Felder
-44. FR44: AI Document Generation: Aus Formularen werden automatisch PDF/Word-Dokumente generiert, inkl. wechselnder Layouts
+1. FR1: Form Builder with drag-and-drop editor for visual form creation
+2. FR2: Component library with text fields, tables, dynamic repeaters, sub-forms, matrix fields, and conditional sections
+3. FR3: Logic without code: visibility rules, validation rules, calculated fields, and field dependencies
+4. FR4: Data models based on JSON Schema / Custom Schema
+5. FR5: Preview function for desktop and mobile view during form creation
+6. FR6: Versioning & branching for forms
+7. FR7: Template library with enterprise standards
+8. FR8: Responsive rendering of forms at runtime
+9. FR9: Offline-capable web version (PWA) for mobile use
+10. FR10: Autosave functionality during form filling
+11. FR11: Dynamic field validation (client-side and server-side)
+12. FR12: Form locking and collision control (co-authoring optional)
+13. FR13: Workflow automation with approval processes (approvals, rejections, delegation)
+14. FR14: Escalations and SLA management for workflows
+15. FR15: Integration with Microsoft Teams, Outlook, Slack for notifications
+16. FR16: Event-based triggers (e.g., ERP events)
+17. FR17: Rule-based routing based on roles, cost centers, departments
+18. FR18: Bidirectional integration with Microsoft 365 (SharePoint & OneDrive)
+19. FR19: Bidirectional integration with D365 F&O and D365 CE
+20. FR20: SAP integration via OData
+21. FR21: ServiceNow integration
+22. FR22: Salesforce integration
+23. FR23: Connectors for external REST/SOAP APIs
+24. FR24: Webhook support for event-driven integrations
+25. FR25: Export to JSON, XML, PDF (A-archiving)
+26. FR26: Version history for forms and form data
+27. FR27: Field-level audit trail for all changes
+28. FR28: Logging of signatures and approvals
+29. FR29: GDPR-compliant deletion concepts
+30. FR30: Optional: field encryption for sensitive data
+31. FR31: Role and permission concept (RBAC + ABAC)
+32. FR32: Admin console for form management
+33. FR33: Workflow configuration via admin console
+34. FR34: Data model management via admin console
+35. FR35: API/Connector overview and management
+36. FR36: Multi-tenancy capability
+37. FR37: Logging & monitoring via admin console
+38. FR38: AI Form Generator: Generates complete forms from PDF, Word, or scans (OCR → Structure → JSON Schema)
+39. FR39: AI Workflow Builder: Analyzes form logic and automatically suggests business processes
+40. FR40: AI Validation Advisor: Suggests validation rules and data binding possibilities
+41. FR41: AI Input Normalization: Automates data quality (address correction, duplicate checking, standardization)
+42. FR42: AI Governance Engine: Detects outdated forms, risks, missing fields, compliance gaps
+43. FR43: AI Conversational Mode: Users fill out forms via chat dialog; backend translates inputs into structured fields
+44. FR44: AI Document Generation: Automatically generates PDF/Word documents from forms, including varying layouts
 
 ### Non Functional
 
@@ -102,49 +102,49 @@ FormXChange Suite bietet eine intuitive, moderne Benutzeroberfläche, die sowohl
 
 ### Key Interaction Paradigms
 
-- **Drag-and-Drop Form Building**: Visuelle Komponenten werden per Drag-and-Drop auf die Canvas gezogen und konfiguriert
-- **Contextual Property Panels**: Rechtsseitige Property-Panels zeigen relevante Konfigurationsoptionen für ausgewählte Komponenten
-- **Live Preview**: Echtzeit-Vorschau der Formulare während der Erstellung, mit Wechsel zwischen Desktop- und Mobile-Ansicht
-- **Rule Builder**: Visueller Rule Builder für Logik ohne Code, mit If-Then-Else-Diagrammen
+- **Drag-and-Drop Form Building**: Visual components are dragged and dropped onto the canvas and configured
+- **Contextual Property Panels**: Right-side property panels show relevant configuration options for selected components
+- **Live Preview**: Real-time preview of forms during creation, with switching between desktop and mobile view
+- **Rule Builder**: Visual rule builder for logic without code, with if-then-else diagrams
 - **Workflow Designer**: Visual workflow designer with BPMN-like notation for business processes
 - **Responsive Design**: Mobile-first approach with adaptive layouts for different screen sizes
 
 ### Core Screens and Views
 
-1. **Dashboard**: Übersicht über alle Formulare, Templates, Workflows und aktuelle Aufgaben
-2. **Form Builder**: Hauptarbeitsbereich für die Formularerstellung mit Canvas, Komponentenpalette und Property-Panel
-3. **Form Runtime**: Responsive Ansicht für Endbenutzer zum Ausfüllen von Formularen
-4. **Workflow Designer**: Visueller Editor für Geschäftsprozesse und Zustimmungswege
-5. **Template Library**: Übersicht und Verwaltung von Formular-Templates
-6. **Integration Hub**: Konfiguration und Verwaltung von System-Integrationen
-7. **Admin Console**: Zentrale Verwaltung für Formulare, Benutzer, Rollen, Mandanten
-8. **Audit Trail Viewer**: Übersicht über alle Änderungen und Aktivitäten mit Filter- und Suchfunktionen
-9. **AI Assistant Panel**: Kontextbezogene AI-Unterstützung für Formularerstellung und Workflow-Design
-10. **Settings & Configuration**: Systemweite Einstellungen, Branding, Compliance-Konfiguration
+1. **Dashboard**: Overview of all forms, templates, workflows, and current tasks
+2. **Form Builder**: Main workspace for form creation with canvas, component palette, and property panel
+3. **Form Runtime**: Responsive view for end users to fill out forms
+4. **Workflow Designer**: Visual editor for business processes and approval paths
+5. **Template Library**: Overview and management of form templates
+6. **Integration Hub**: Configuration and management of system integrations
+7. **Admin Console**: Central management for forms, users, roles, tenants
+8. **Audit Trail Viewer**: Overview of all changes and activities with filter and search functions
+9. **AI Assistant Panel**: Contextual AI support for form creation and workflow design
+10. **Settings & Configuration**: System-wide settings, branding, compliance configuration
 
 ### Accessibility: WCAG AA
 
-Die Anwendung erfüllt WCAG AA Standards für Barrierefreiheit:
-- Tastaturnavigation für alle Funktionen
-- Screen-Reader-Unterstützung mit ARIA-Labels
-- Ausreichender Farbkontrast (mindestens 4.5:1)
-- Fokus-Indikatoren für alle interaktiven Elemente
-- Alternative Texte für Bilder und Icons
-- Strukturierte Überschriftenhierarchie
+The application meets WCAG AA standards for accessibility:
+- Keyboard navigation for all functions
+- Screen reader support with ARIA labels
+- Sufficient color contrast (at least 4.5:1)
+- Focus indicators for all interactive elements
+- Alternative text for images and icons
+- Structured heading hierarchy
 
 ### Branding
 
-Die Anwendung unterstützt White-Label-Branding:
-- Anpassbare Farbpalette und Themes
-- Custom Logos und Favicons
-- Anpassbare E-Mail-Templates für Benachrichtigungen
-- Custom Domain-Support für Enterprise-Kunden
+The application supports white-label branding:
+- Customizable color palette and themes
+- Custom logos and favicons
+- Customizable email templates for notifications
+- Custom domain support for enterprise customers
 
 ### Target Device and Platforms: Web Responsive
 
-Die Anwendung ist als responsive Web-App konzipiert:
-- **Desktop**: Optimiert für Bildschirme ab 1280px Breite
-- **Tablet**: Optimiert für iPad und Android Tablets (768px - 1279px)
+The application is designed as a responsive web app:
+- **Desktop**: Optimized for screens from 1280px width
+- **Tablet**: Optimized for iPad and Android tablets (768px - 1279px)
 - **Mobile**: Optimized for smartphones (320px - 767px)
 - **PWA**: Offline functionality for mobile devices with service workers
 
@@ -152,52 +152,52 @@ Die Anwendung ist als responsive Web-App konzipiert:
 
 ### Repository Structure: Monorepo
 
-Das Projekt verwendet eine Monorepo-Struktur für bessere Code-Sharing und Dependency-Management zwischen Frontend, Backend und gemeinsamen Bibliotheken.
+The project uses a monorepo structure for better code sharing and dependency management between frontend, backend, and shared libraries.
 
-**Rationale**: Enge Kopplung zwischen Frontend und Backend, gemeinsame Type-Definitionen, einfacheres Refactoring, zentrale CI/CD-Pipeline.
+**Rationale**: Tight coupling between frontend and backend, shared type definitions, easier refactoring, centralized CI/CD pipeline.
 
 ### Service Architecture: Microservices
 
-Die Anwendung folgt einer Microservices-Architektur mit folgenden Services:
-- **Form Builder Service**: Formularerstellung und -verwaltung
-- **Form Runtime Service**: Formularausfüllung und Validierung
-- **Workflow Engine Service**: Geschäftsprozess-Automatisierung (Camunda 8 / Temporal)
-- **Integration Gateway Service**: GraphQL Gateway für externe Integrationen
-- **Auth Service**: Authentifizierung und Autorisierung (OAuth2/OIDC)
-- **Storage Service**: Verwaltung von Formulardaten und Dokumenten (PostgreSQL + S3)
+The application follows a microservices architecture with the following services:
+- **Form Builder Service**: Form creation and management
+- **Form Runtime Service**: Form filling and validation
+- **Workflow Engine Service**: Business process automation (Camunda 8 / Temporal)
+- **Integration Gateway Service**: GraphQL Gateway for external integrations
+- **Auth Service**: Authentication and authorization (OAuth2/OIDC)
+- **Storage Service**: Management of form data and documents (PostgreSQL + S3)
 - **AI Service**: AI-powered features (Form Generator, Workflow Builder, etc.)
-- **Admin Service**: Verwaltungsfunktionen und Konfiguration
+- **Admin Service**: Administrative functions and configuration
 
-**Rationale**: Skalierbarkeit, unabhängige Deployment-Zyklen, Technologie-Flexibilität, bessere Fehlerisolierung.
+**Rationale**: Scalability, independent deployment cycles, technology flexibility, better error isolation.
 
 ### Testing Requirements: Full Testing Pyramid
 
-Umfassende Testabdeckung mit:
-- **Unit Tests**: Mindestens 80% Code Coverage für Business Logic
-- **Integration Tests**: API-Integrationen, Datenbank-Interaktionen, Service-zu-Service-Kommunikation
-- **E2E Tests**: Kritische User Journeys mit Playwright oder Cypress
-- **Performance Tests**: Load Testing für kritische Endpoints
-- **Security Tests**: Penetration Testing, Dependency Scanning
+Comprehensive test coverage with:
+- **Unit Tests**: At least 80% code coverage for business logic
+- **Integration Tests**: API integrations, database interactions, service-to-service communication
+- **E2E Tests**: Critical user journeys with Playwright or Cypress
+- **Performance Tests**: Load testing for critical endpoints
+- **Security Tests**: Penetration testing, dependency scanning
 
 **Rationale**: High quality standards for enterprise software, compliance requirements, risk minimization.
 
 ### Additional Technical Assumptions and Requests
 
-1. **Frontend Framework**: React 18+ mit TypeScript für Type-Safety und moderne Entwicklererfahrung
-2. **State Management**: Zustand oder Redux Toolkit für komplexe Formular-Logik
-3. **Form Rendering Engine**: JSON Schema-basierte Form-Rendering-Engine (z.B. react-jsonschema-form oder Custom)
-4. **Backend Framework**: .NET 8 (C#) für Enterprise-Performance und breite Ecosystem-Unterstützung
-5. **Workflow Engine**: Camunda 8 (Zeebe) oder Temporal für robuste Workflow-Automatisierung
-6. **Database**: PostgreSQL 15+ für relationale Metadaten, S3-kompatibler Storage für Dokumente
-7. **API Gateway**: GraphQL Federation für flexible API-Zugriffe, REST für externe Integrationen
-8. **Authentication**: OAuth2/OIDC mit Azure AD / Entra ID Integration, Keycloak als Alternative
-9. **Containerization**: Docker für lokale Entwicklung, Kubernetes für Production-Deployment
-10. **CI/CD**: GitOps mit ArgoCD für automatisiertes Deployment
-11. **Monitoring**: Prometheus + Grafana für Metriken, ELK Stack für Logging
-12. **Document Storage**: S3-kompatibler Storage (MinIO für On-Prem, AWS S3 für Cloud)
-13. **Caching**: Redis für Session-Management und Performance-Optimierung
-14. **Message Queue**: RabbitMQ oder Apache Kafka für asynchrone Verarbeitung
-15. **Version Control**: Git mit Semantic Versioning für Formulare und Workflows
+1. **Frontend Framework**: React 18+ with TypeScript for type safety and modern developer experience
+2. **State Management**: Zustand or Redux Toolkit for complex form logic
+3. **Form Rendering Engine**: JSON Schema-based form rendering engine (e.g., react-jsonschema-form or custom)
+4. **Backend Framework**: .NET 8 (C#) for enterprise performance and broad ecosystem support
+5. **Workflow Engine**: Camunda 8 (Zeebe) or Temporal for robust workflow automation
+6. **Database**: PostgreSQL 15+ for relational metadata, S3-compatible storage for documents
+7. **API Gateway**: GraphQL Federation for flexible API access, REST for external integrations
+8. **Authentication**: OAuth2/OIDC with Azure AD / Entra ID integration, Keycloak as alternative
+9. **Containerization**: Docker for local development, Kubernetes for production deployment
+10. **CI/CD**: GitOps with ArgoCD for automated deployment
+11. **Monitoring**: Prometheus + Grafana for metrics, ELK Stack for logging
+12. **Document Storage**: S3-compatible storage (MinIO for on-premises, AWS S3 for cloud)
+13. **Caching**: Redis for session management and performance optimization
+14. **Message Queue**: RabbitMQ or Apache Kafka for asynchronous processing
+15. **Version Control**: Git with semantic versioning for forms and workflows
 
 ## Epic List
 
