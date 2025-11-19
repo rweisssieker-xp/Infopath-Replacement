@@ -4,19 +4,19 @@
 
 ### Goals
 
-- Modernisierung der Formular- und Workflow-Landschaft für Unternehmen, die InfoPath, Lotus Forms oder Adobe LiveCycle ersetzen müssen
-- Low-Code-Erstellung komplexer, logikbasierter digitaler Formulare ohne Entwicklerwissen
-- Nahtlose Enterprise-Integration in Microsoft 365, SharePoint, D365, SAP, ServiceNow, Salesforce sowie generische REST/SOAP-Systeme
-- Compliance-Sicherheit: DSGVO, Archivierung, Audit Trails, Signaturprozesse
-- Workflow-Automatisierung zur direkten Umsetzung von Formularlogik in Geschäftsprozesse
-- Cloud, On-Prem und Hybrid-Support für maximale Flexibilität
-- AI-gestützte Formularerstellung und -optimierung zur Beschleunigung der Formularerstellung
+- Modernize form and workflow landscape for enterprises that need to replace InfoPath, Lotus Forms, or Adobe LiveCycle
+- Low-code creation of complex, logic-based digital forms without developer knowledge
+- Seamless enterprise integration with Microsoft 365, SharePoint, D365, SAP, ServiceNow, Salesforce, and generic REST/SOAP systems
+- Compliance security: GDPR, archiving, audit trails, signature processes
+- Workflow automation for direct implementation of form logic into business processes
+- Cloud, on-premises, and hybrid support for maximum flexibility
+- AI-powered form creation and optimization to accelerate form development
 
 ### Background Context
 
-FormXChange Suite adressiert die Herausforderung, die durch das Ende von Microsoft InfoPath entstanden ist. Viele Unternehmen nutzen komplexe, geschäftslogikbasierte Formulare für kritische Prozesse wie Lieferantenanlage, CAPA-Workflows, Qualitätsmeldungen und Genehmigungsprozesse. Die bestehenden Lösungen (InfoPath, Lotus Forms, Adobe LiveCycle) werden nicht mehr unterstützt oder sind zu teuer/komplex.
+FormXChange Suite addresses the challenge created by the end of Microsoft InfoPath. Many enterprises use complex, business logic-based forms for critical processes such as supplier onboarding, CAPA workflows, quality reports, and approval processes. Existing solutions (InfoPath, Lotus Forms, Adobe LiveCycle) are no longer supported or are too expensive/complex.
 
-Die Plattform bietet eine moderne, modulare Alternative mit Low-Code-Formbuilder, Enterprise-Integrationen und Workflow-Automatisierung. Der Fokus liegt auf Compliance, Strukturierbarkeit, Versionierung und einfacher Bereitstellung über Web, Mobile und API.
+The platform provides a modern, modular alternative with low-code form builder, enterprise integrations, and workflow automation. The focus is on compliance, structure, versioning, and easy deployment via Web, Mobile, and API.
 
 ### Change Log
 
@@ -75,24 +75,24 @@ Die Plattform bietet eine moderne, modulare Alternative mit Low-Code-Formbuilder
 
 ### Non Functional
 
-1. NFR1: Transportverschlüsselung mit TLS 1.3 für alle Kommunikation
-2. NFR2: Datenbankverschlüsselung (TDE) für gespeicherte Daten
-3. NFR3: OAuth2 / OIDC für Authentifizierung, kompatibel mit Azure AD / Entra ID
-4. NFR4: Optionale Signaturintegration: DocuSign / EU-eIDAS-Signaturen
-5. NFR5: Deployment-Unterstützung: Docker/Kubernetes für Cloud, Hybrid und On-Prem
-6. NFR6: Skalierbarkeit: Unterstützung für Enterprise-Workloads mit hoher Nutzeranzahl
-7. NFR7: Performance: Formularrendering < 2 Sekunden für Standard-Formulare
-8. NFR8: Verfügbarkeit: 99.9% Uptime für SaaS-Deployment
-9. NFR9: Browser-Kompatibilität: Moderne Browser (Chrome, Edge, Firefox, Safari) der letzten 2 Hauptversionen
-10. NFR10: Mobile Responsiveness: Optimierte Darstellung auf Smartphones und Tablets
-11. NFR11: Internationalisierung: Multi-Language-Support für Formulare und UI
-12. NFR12: Accessibility: WCAG AA Compliance für Barrierefreiheit
-13. NFR13: API-Performance: REST/GraphQL APIs mit Response-Zeiten < 500ms (p95)
-14. NFR14: Datenarchivierung: Langzeitarchivierung nach A-Archivierungsstandards
-15. NFR15: Backup & Recovery: Tägliche Backups mit Recovery Point Objective (RPO) < 24 Stunden
-16. NFR16: Monitoring: Real-time Monitoring und Alerting für kritische Systemkomponenten
-17. NFR17: Logging: Strukturiertes Logging für Audit-Zwecke mit Retention von mindestens 7 Jahren
-18. NFR18: Compliance: Unterstützung für branchenspezifische Compliance-Anforderungen (z.B. FDA, HIPAA für Healthcare)
+1. NFR1: Transport encryption with TLS 1.3 for all communication
+2. NFR2: Database encryption (TDE) for stored data
+3. NFR3: OAuth2 / OIDC for authentication, compatible with Azure AD / Entra ID
+4. NFR4: Optional signature integration: DocuSign / EU-eIDAS signatures
+5. NFR5: Deployment support: Docker/Kubernetes for cloud, hybrid, and on-premises
+6. NFR6: Scalability: Support for enterprise workloads with high user counts
+7. NFR7: Performance: Form rendering < 2 seconds for standard forms
+8. NFR8: Availability: 99.9% uptime for SaaS deployment
+9. NFR9: Browser compatibility: Modern browsers (Chrome, Edge, Firefox, Safari) of the last 2 major versions
+10. NFR10: Mobile responsiveness: Optimized display on smartphones and tablets
+11. NFR11: Internationalization: Multi-language support for forms and UI
+12. NFR12: Accessibility: WCAG AA compliance for accessibility
+13. NFR13: API performance: REST/GraphQL APIs with response times < 500ms (p95)
+14. NFR14: Data archiving: Long-term archiving according to A-archiving standards
+15. NFR15: Backup & recovery: Daily backups with Recovery Point Objective (RPO) < 24 hours
+16. NFR16: Monitoring: Real-time monitoring and alerting for critical system components
+17. NFR17: Logging: Structured logging for audit purposes with retention of at least 7 years
+18. NFR18: Compliance: Support for industry-specific compliance requirements (e.g., FDA, HIPAA for healthcare)
 
 ## User Interface Design Goals
 
@@ -106,8 +106,8 @@ FormXChange Suite bietet eine intuitive, moderne Benutzeroberfläche, die sowohl
 - **Contextual Property Panels**: Rechtsseitige Property-Panels zeigen relevante Konfigurationsoptionen für ausgewählte Komponenten
 - **Live Preview**: Echtzeit-Vorschau der Formulare während der Erstellung, mit Wechsel zwischen Desktop- und Mobile-Ansicht
 - **Rule Builder**: Visueller Rule Builder für Logik ohne Code, mit If-Then-Else-Diagrammen
-- **Workflow Designer**: Visueller Workflow-Designer mit BPMN-ähnlicher Notation für Geschäftsprozesse
-- **Responsive Design**: Mobile-First-Ansatz mit adaptiven Layouts für verschiedene Bildschirmgrößen
+- **Workflow Designer**: Visual workflow designer with BPMN-like notation for business processes
+- **Responsive Design**: Mobile-first approach with adaptive layouts for different screen sizes
 
 ### Core Screens and Views
 
@@ -145,8 +145,8 @@ Die Anwendung unterstützt White-Label-Branding:
 Die Anwendung ist als responsive Web-App konzipiert:
 - **Desktop**: Optimiert für Bildschirme ab 1280px Breite
 - **Tablet**: Optimiert für iPad und Android Tablets (768px - 1279px)
-- **Mobile**: Optimiert für Smartphones (320px - 767px)
-- **PWA**: Offline-Funktionalität für mobile Geräte mit Service Workers
+- **Mobile**: Optimized for smartphones (320px - 767px)
+- **PWA**: Offline functionality for mobile devices with service workers
 
 ## Technical Assumptions
 
@@ -165,7 +165,7 @@ Die Anwendung folgt einer Microservices-Architektur mit folgenden Services:
 - **Integration Gateway Service**: GraphQL Gateway für externe Integrationen
 - **Auth Service**: Authentifizierung und Autorisierung (OAuth2/OIDC)
 - **Storage Service**: Verwaltung von Formulardaten und Dokumenten (PostgreSQL + S3)
-- **AI Service**: AI-gestützte Funktionen (Form Generator, Workflow Builder, etc.)
+- **AI Service**: AI-powered features (Form Generator, Workflow Builder, etc.)
 - **Admin Service**: Verwaltungsfunktionen und Konfiguration
 
 **Rationale**: Skalierbarkeit, unabhängige Deployment-Zyklen, Technologie-Flexibilität, bessere Fehlerisolierung.
@@ -179,7 +179,7 @@ Umfassende Testabdeckung mit:
 - **Performance Tests**: Load Testing für kritische Endpoints
 - **Security Tests**: Penetration Testing, Dependency Scanning
 
-**Rationale**: Hohe Qualitätsstandards für Enterprise-Software, Compliance-Anforderungen, Risikominimierung.
+**Rationale**: High quality standards for enterprise software, compliance requirements, risk minimization.
 
 ### Additional Technical Assumptions and Requests
 

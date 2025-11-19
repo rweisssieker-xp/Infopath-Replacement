@@ -4,17 +4,16 @@
 
 ### [Product Requirements Document](./prd.md)
 
-Vollständige Produktspezifikation für FormXChange Suite mit Epics, Stories und technischen Anforderungen.
+Complete product specification for FormXChange Suite with epics, stories, and technical requirements.
 
 ## Architecture
 
-Architektur-Dokumentation wird hier erstellt.
+Architecture documentation will be created here.
 
 ## Stories
 
-User Stories für die Entwicklung werden hier erstellt.
+User stories for development will be created here.
 
 ## QA
 
-Quality Assurance Dokumente werden hier erstellt.
-
+Quality Assurance documents will be created here.

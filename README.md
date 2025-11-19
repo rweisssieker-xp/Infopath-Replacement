@@ -1,38 +1,38 @@
 # FormXChange Suite
 
-Eine modulare Plattform zur Erstellung komplexer, dynamischer Geschäftsformulare mit Enterprise-Integrationen, Workflow-Automatisierung und AI-gestützten Funktionen.
+A modular platform for creating complex, dynamic business forms with enterprise integrations, workflow automation, and AI-powered features.
 
-## Projektübersicht
+## Project Overview
 
-FormXChange Suite ist eine moderne Alternative zu Microsoft InfoPath, Lotus Forms und Adobe LiveCycle. Die Plattform ermöglicht die Low-Code-Erstellung komplexer Formulare, nahtlose Enterprise-Integrationen und umfassende Compliance-Funktionen.
+FormXChange Suite is a modern alternative to Microsoft InfoPath, Lotus Forms, and Adobe LiveCycle. The platform enables low-code creation of complex forms, seamless enterprise integrations, and comprehensive compliance features.
 
-## Dokumentation
+## Documentation
 
-- **[Product Requirements Document (PRD)](docs/prd.md)** - Vollständige Produktspezifikation mit Epics und Stories
-- **[Architecture Document](docs/architecture.md)** - Systemarchitektur-Dokumentation
-- **[Frontend Specification](docs/front-end-spec.md)** - UI/UX Spezifikation
-- **[Stories](docs/stories/)** - User Stories für die Entwicklung
+- **[Product Requirements Document (PRD)](docs/prd.md)** - Complete product specification with epics and stories
+- **[Architecture Document](docs/architecture.md)** - System architecture documentation
+- **[Frontend Specification](docs/front-end-spec.md)** - UI/UX specification
+- **[Stories](docs/stories/)** - User stories for development
 
-## Technologie-Stack
+## Technology Stack
 
-- **Frontend**: React 18+ mit TypeScript, Material-UI/Ant Design
+- **Frontend**: React 18+ with TypeScript, Material-UI/Ant Design
 - **Backend**: .NET 8 (C#), ASP.NET Core
 - **API**: GraphQL (Hot Chocolate) + REST
-- **Workflow Engine**: Camunda 8 (Zeebe) oder Temporal
+- **Workflow Engine**: Camunda 8 (Zeebe) or Temporal
 - **Database**: PostgreSQL 15+
 - **Cache**: Redis 7.2+
-- **Storage**: S3-kompatibler Storage (MinIO/AWS S3)
+- **Storage**: S3-compatible storage (MinIO/AWS S3)
 - **Deployment**: Kubernetes (Helm Charts)
 - **Authentication**: OAuth2/OIDC (Azure AD / Entra ID)
 - **CI/CD**: GitHub Actions / GitLab CI
 - **Monitoring**: Prometheus + Grafana
 - **Logging**: ELK Stack
 
-## Projektstruktur
+## Project Structure
 
 ```
 formxchange-suite/
-├── apps/                          # Alle Anwendungen (Frontend + Microservices)
+├── apps/                          # All applications (Frontend + Microservices)
 │   ├── web/                       # React Frontend
 │   ├── form-builder-service/      # Form Builder Microservice
 │   ├── form-runtime-service/      # Form Runtime Microservice
@@ -51,90 +51,90 @@ formxchange-suite/
 │   ├── helm/                     # Helm charts
 │   └── terraform/                # Terraform (optional)
 ├── scripts/                      # Build and deployment scripts
-├── docs/                         # Dokumentation
+├── docs/                         # Documentation
 │   ├── prd.md
 │   ├── architecture.md
 │   ├── front-end-spec.md
 │   ├── stories/                  # User Stories
 │   └── qa/                       # Quality Assurance
-└── .bmad-core/                   # BMad Method Konfiguration
+└── .bmad-core/                   # BMad Method Configuration
 ```
 
-## Lokale Entwicklung
+## Local Development
 
-### Voraussetzungen
+### Prerequisites
 
-- Node.js 18+ und npm/yarn/pnpm
+- Node.js 18+ and npm/yarn/pnpm
 - .NET 8 SDK
-- PostgreSQL 15+ (oder lokale Installation)
-- Redis 7.2+ (oder lokale Installation)
-- MinIO oder AWS S3 (für Object Storage)
+- PostgreSQL 15+ (or local installation)
+- Redis 7.2+ (or local installation)
+- MinIO or AWS S3 (for object storage)
 
 ### Setup
 
-1. **Repository klonen:**
+1. **Clone repository:**
    ```bash
    git clone <repository-url>
    cd formxchange-suite
    ```
 
-2. **Dependencies installieren:**
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. **Umgebungsvariablen konfigurieren:**
+3. **Configure environment variables:**
    ```bash
    cp .env.example .env.development
-   # Bearbeite .env.development und fülle die Werte aus
+   # Edit .env.development and fill in the values
    ```
 
-4. **Infrastruktur-Services starten:**
-   - PostgreSQL: Lokal installiert oder über Docker (siehe docker-compose.yml)
-   - Redis: Lokal installiert oder über Docker
-   - MinIO: Lokal installiert oder über Docker
+4. **Start infrastructure services:**
+   - PostgreSQL: Locally installed or via Docker (see docker-compose.yml)
+   - Redis: Locally installed or via Docker
+   - MinIO: Locally installed or via Docker
 
-5. **Anwendung starten:**
+5. **Start application:**
    ```bash
-   # Alle Services starten
+   # Start all services
    npm run dev
    
-   # Nur Frontend
+   # Frontend only
    npm run dev:web
    
-   # Nur Backend Services
+   # Backend services only
    npm run dev:api
    ```
 
-### Entwicklungskommandos
+### Development Commands
 
 ```bash
-# Tests ausführen
-npm test                    # Alle Tests
-npm run test:web           # Frontend Tests
-npm run test:api          # Backend Tests
+# Run tests
+npm test                    # All tests
+npm run test:web           # Frontend tests
+npm run test:api          # Backend tests
 
 # Build
-npm run build              # Alle Anwendungen bauen
+npm run build              # Build all applications
 
 # Linting
-npm run lint               # Code-Qualität prüfen
+npm run lint               # Check code quality
 
-# Formatierung
-npm run format             # Code formatieren
+# Formatting
+npm run format             # Format code
 ```
 
 ## Deployment
 
 ### Kubernetes Deployment
 
-Das Projekt verwendet Kubernetes für die Produktions-Deployment:
+The project uses Kubernetes for production deployment:
 
 ```bash
-# Namespace erstellen
+# Create namespace
 kubectl apply -f infrastructure/kubernetes/namespaces/formxchange.yaml
 
-# Mit Helm deployen
+# Deploy with Helm
 helm install formxchange-suite ./infrastructure/helm/formxchange-suite \
   --namespace formxchange \
   --values ./infrastructure/helm/formxchange-suite/values.yaml
@@ -142,22 +142,22 @@ helm install formxchange-suite ./infrastructure/helm/formxchange-suite \
 
 ### CI/CD Pipeline
 
-Die CI/CD Pipeline ist in `.github/workflows/ci.yaml` konfiguriert und führt automatisch aus:
-- Tests (Frontend und Backend)
+The CI/CD pipeline is configured in `.github/workflows/ci.yaml` and automatically executes:
+- Tests (Frontend and Backend)
 - Linting
 - Build
 - Security Scans
 
-## Entwicklung
+## Development
 
-Dieses Projekt verwendet die BMad Method für strukturierte Softwareentwicklung. Siehe [AGENTS.md](AGENTS.md) für verfügbare Agents und Workflows.
+This project uses the BMad Method for structured software development. See [AGENTS.md](AGENTS.md) for available agents and workflows.
 
-### Story-basierte Entwicklung
+### Story-based Development
 
-- Stories befinden sich in `docs/stories/`
-- Jede Story folgt dem Format: `{epic}.{story}.{title}.story.md`
-- Stories werden sequenziell implementiert und durch QA-Review geprüft
+- Stories are located in `docs/stories/`
+- Each story follows the format: `{epic}.{story}.{title}.story.md`
+- Stories are implemented sequentially and reviewed by QA
 
-## Lizenz
+## License
 
-[Zu definieren]
+[To be defined]
