@@ -1,23 +1,104 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using FormRuntimeService.Data;
+using FormRuntimeService.Repositories;
+using FormRuntimeService.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Configure services
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "Form Runtime Service API",
+        Version = "v1",
+        Description = "API for managing form submissions"
+    });
+});
+
+// Configure database
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<FormRuntimeDbContext>(options =>
+    options.UseNpgsql(connectionString));
+
+// Configure JWT Authentication
+var jwtSecret = builder.Configuration["JWT:Secret"] ?? throw new InvalidOperationException("JWT Secret not configured");
+var jwtIssuer = builder.Configuration["JWT:Issuer"] ?? "FormXChange.AuthService";
+var jwtAudience = builder.Configuration["JWT:Audience"] ?? "FormXChange.Suite";
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret)),
+            ValidateIssuer = true,
+            ValidIssuer = jwtIssuer,
+            ValidateAudience = true,
+            ValidAudience = jwtAudience,
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.Zero
+        };
+    });
+
+builder.Services.AddAuthorization();
+
+// Configure FluentValidation
+builder.Services.AddValidatorsFromAssemblyContaining<FormRuntimeService.Models.DTOs.CreateSubmissionRequest>();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+
+// Register repositories
+builder.Services.AddScoped<IFormSubmissionRepository, FormSubmissionRepository>();
+
+// Register services
+builder.Services.AddScoped<IFormSubmissionService, FormSubmissionService>();
+
+// Add HttpContextAccessor and HttpClientFactory
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient();
+
+// Configure CORS
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins(builder.Configuration["AllowedOrigins"]?.Split(",") ?? new[] { "http://localhost:3000" })
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+app.UseHttpsRedirection();
+app.UseCors();
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
+
+// Ensure database is created (for development only)
+if (app.Environment.IsDevelopment())
+{
+    using var scope = app.Services.CreateScope();
+    var dbContext = scope.ServiceProvider.GetRequiredService<FormRuntimeDbContext>();
+    dbContext.Database.EnsureCreated();
+}
 
 app.Run();
